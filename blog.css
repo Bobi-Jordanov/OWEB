@@ -1,0 +1,113 @@
+    .card {
+        padding: 2%;
+        margin: 3% 10%;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+        border-radius: 8px;
+    }
+    
+    #header-blog {
+        background: #2d2f35;
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        padding: 30px 10%;
+        width: 100%;
+        z-index: 1;
+        position: fixed;
+    }
+    
+    #header-blog #logo {
+        cursor: pointer;
+        margin-right: auto;
+    }
+    
+    h2 {
+        font-family: 'Georgia', sans-serif;
+        font-size: xx-large;
+        margin: 1% 2% 8% 2%;
+        padding: 2%;
+        color: #0088a9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    h5 {
+        font-family: 'Georgia', sans-serif;
+        font-size: medium;
+        padding: 1%;
+        color: black;
+        display: flex;
+        align-items: center;
+        line-height: 20px
+    }
+    
+    textarea {
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        margin: 0.5%;
+        border-radius: 8px;
+        font-family: 'Georgia', sans-serif;
+        font-size: large;
+        box-sizing: border-box;
+        resize: none;
+        outline-color: rgba(0, 136, 169, 1);
+    }
+    
+    .post-btn {
+        margin: 18px;
+        padding: 9px 25px;
+        background-color: rgba(0, 136, 169, 1);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+    
+    .post-btn:hover {
+        background-color: rgba(0, 135, 169, 0.644);
+        transition: all 0.3s ease 0s;
+    }
+    
+    .blog-txt {
+        color: black;
+        margin: 0% 1%;
+        padding: 1%;
+        line-height: 30px;
+        font-size: large;
+    }
+    
+    .txt {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 0.5%;
+        border-radius: 8px;
+        border: 1px solid grey;
+        font-family: 'Georgia', sans-serif;
+        font-size: large;
+        box-sizing: border-box;
+        resize: none;
+        outline-color: rgba(0, 136, 169, 1);
+    }
+    
+    a.a-blog {
+        color: #0088a9;
+    }
+    
+    a.a-blog:hover {
+        text-decoration: 1px underline #0088a9;
+        transition: all 0.3s ease 0s;
+    }
+    
+    .nav-bar {
+        width: 100%;
+        display: flex;
+        margin-bottom: 15%;
+    }
