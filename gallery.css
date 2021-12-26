@@ -1,0 +1,118 @@
+#header-gallery {
+    background: #2d2f35;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+}
+
+.card {
+    padding: 2%;
+    margin: 5% 15%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    border-radius: 8px;
+}
+
+.pic img {
+    height: 50%;
+    width: 86%;
+    display: flex;
+    margin: 0% auto 4% auto;
+}
+
+.pic h5 {
+    font-family: 'Georgia', sans-serif;
+    font-size: small;
+    padding: 2%;
+    color: black;
+    display: flex;
+    align-items: center;
+    line-height: 20px
+}
+
+.like {
+    cursor: pointer;
+}
+
+.like:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f004";
+    font-style: normal;
+}
+
+.like.is-active:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f004";
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .comments {
+    width: 100%;
+    font-size: 14px;
+}
+
+.container .comments div {
+    color: black;
+    background: #ebebeb;
+    margin-top: 20px;
+    padding: 25px 35px;
+    position: relative;
+}
+
+.container .box-card input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.container .box-card button {
+    width: 10%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 8px;
+    transition: all .5s;
+}
+
+.comment-box {
+    line-height: 30px;
+}
+
+.container .box-card button:hover {
+    color: #0794b8;
+    transition: all .5s;
+}
+
+div.uploadBtn i {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30pt;
+}
+
+div.uploadBtn i:hover {
+    cursor: pointer;
+    color: #0794b8;
+    transition: all .5s;
+}

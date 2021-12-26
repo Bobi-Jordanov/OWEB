@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bobi's Website</title>
+    <link href="images/BJ-1.1.svg" rel="icon">
+    <link rel="stylesheet" href="webpage_styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link href="http://fonts.cdnfonts.com/css/georgia" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/53e91e8124.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script>
+        var mom;
+
+        var loadFile = function(event) {
+
+            name = window.prompt("Enter your name:");
+
+            var d = new Date();
+            var time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var months_v = months[d.getMonth()];
+            var days_v = days[d.getDay()];
+
+            var postedByAndDate = `<h5>Posted by ${name}, ${days_v}, ${d.getDate()} ${months_v} ${d.getFullYear()}, ${time}</h5>`;
+
+            var uploadPicHere = document.getElementById('uploadPicHere');
+            var imageSrc = URL.createObjectURL(event.target.files[0]);
+
+            var uploadDiv = document.createElement('div');
+            uploadDiv.setAttribute('class', 'card');
+            var currentDiv =
+                `<div class="card">
+                    <div class="pic">
+                        ${postedByAndDate}
+                        <img src=${imageSrc}>
+                    </div>
+                    <div class="container">
+                        <div class="box-card">
+                            <div class="like-div">
+                                <i style="content: \f004; font-size:x-large;" class="like"></i>
+                            </div>
+                        </div>
+                        <div class="box-card">
+                            <i class="fas fa-comments fa-lg"></i>
+                            <span class="comment-counter"></span>
+                        </div>
+
+                        <div class="box-card" style="display: flex;">
+                            <div style="display: flex;">
+                                <input type="text" placeholder="Your name" id="name" style="font-size: 14px;">
+                                <input type="text" placeholder="Write a comment..." id="comment" style="font-size: 14px;">
+                            </div>
+
+                            <button class="add-comment" style="border: none;"><i class="fas fa-share-square fa-lg"></i></button>
+                        </div>
+                    </div>
+                    <div id="comment-place">
+
+                    </div>
+                </div>`
+
+
+            mom = getSavedPost("uploadPicHere");
+            document.getElementById("uploadPicHere").innerHTML = currentDiv + mom;
+
+            //go zachuvuva tekstot vo lokalnata memorija
+            mom = currentDiv + mom;
+            localStorage.setItem("uploadPicHere", mom);
+
+        };
+
+        function getSavedPost(v) {
+            if (!localStorage.getItem(v)) {
+                localStorage.setItem(v, "");
+                return "";
+            }
+            return localStorage.getItem(v);
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="nav-bar">
+        <nav id="header-gallery">
+            <div id="logo">
+                <a>
+                    <img class="logo" src="images/BJ-1.1.svg" alt="logo" title="BJ" width="65px" height="45px">
+                </a>
+            </div>
+            <ul class="nav_links">
+                <li><a href="webpage.html#home">Home</a></li>
+                <li><a href="webpage.html#aboutme">About me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <div class="dropdown">
+                    <button class="dropbutton"><a href="#favorites">Favorites</a></button>
+                    <div class="dropdown-content">
+                        <a href="webpage.html#music">Music</a>
+                        <a href="webpage.html#movies">Movies</a>
+                        <a href="webpage.html#food">Food</a>
+                    </div>
+                </div>
+            </ul>
+            <div>
+                <a class="cta" href="webpage.html#contactAndFeedback"><button class="feedback-button">Contact & Feedback</button></a> </div>
+        </nav>
+    </div>
+
+    <!--Upload pics section-->
+    <h3 style="text-align: center;">Click the icon to add a picture</h3>
+    <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
+    <label for="file">
+            <div class="uploadBtn" >
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+    </label>
+
+    <div id="uploadPicHere">
+        <script>
+            document.getElementById("uploadPicHere").innerHTML = getSavedPost("uploadPicHere");
+        </script>
+    </div>
+
+    <!--Hardcoded pics, for example-->
+    <div class="card">
+        <div class="pic">
+            <h5>Posted by Bobi, 1 December 2021</h5>
+            <img src="images/img1.jpg">
+
+        </div>
+        <div class="container">
+            <div class="box-card">
+                <div class="like-div">
+                    <i style="content: \f004; font-size:x-large;" class="like"></i>
+                </div>
+            </div>
+
+            <div class="box-card">
+                <i class="fas fa-comments fa-lg"></i>
+                <span class="comment-counter"></span>
+            </div>
+
+            <div class="box-card" style="display: flex;">
+                <div style="display: flex;">
+                    <input type="text" placeholder="Your name" id="name" style="font-size: 14px;">
+                    <input type="text" placeholder="Write a comment..." id="comment" style="font-size: 14px;">
+                </div>
+
+                <button class="add-comment" style="border: none;"><i class="fas fa-share-square fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="comment-place">
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="pic">
+            <h5>Posted by Bobi, 1 December 2021</h5>
+            <img src="images/img2.jpg">
+        </div>
+
+        <div class="container">
+            <div class="box-card">
+
+                <div class="like-div">
+                    <i style="content: \f004; font-size:x-large;" class="like"></i>
+                </div>
+            </div>
+
+            <div class="box-card">
+                <i class="fas fa-comments fa-lg"></i>
+                <span class="comment-counter"></span>
+            </div>
+
+            <div class="box-card" style="display: flex;">
+                <div style="display: flex;">
+                    <input type="text" placeholder="Your name" id="name" style="font-size: 14px;">
+                    <input type="text" placeholder="Write a comment..." id="comment" style="font-size: 14px;">
+                </div>
+
+                <button class="add-comment" style="border: none;"><i class="fas fa-share-square fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="comment-place">
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="pic">
+            <h5>Posted by Bobi, 1 December 2021</h5>
+            <img src="images/img3.jpg">
+        </div>
+
+        <div class="container">
+            <div class="box-card">
+
+                <div class="like-div">
+                    <i style="content: \f004; font-size:x-large;" class="like"></i>
+                </div>
+            </div>
+
+            <div class="box-card">
+                <i class="fas fa-comments fa-lg"></i>
+                <span class="comment-counter"></span>
+            </div>
+
+            <div class="box-card" style="display: flex;">
+                <div style="display: flex;">
+                    <input type="text" placeholder="Your name" id="name" style="font-size: 14px;">
+                    <input type="text" placeholder="Write a comment..." id="comment" style="font-size: 14px;">
+                </div>
+
+                <button class="add-comment" style="border: none;"><i class="fas fa-share-square fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="comment-place">
+
+        </div>
+    </div>
+
+
+
+    <footer id="footer-1">
+        <div class="copyright">
+            &copy; Copyright, designed by <b>Bobi Jordanov</b>. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

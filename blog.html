@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bobi's Website</title>
+    <link href="images/BJ-1.1.svg" rel="icon">
+    <link rel="stylesheet" href="webpage_styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <link href="http://fonts.cdnfonts.com/css/georgia" rel="stylesheet">
+    <script type="text/javascript">
+        var mom;
+
+        function getSavedValuePost(v) {
+            if (!localStorage.getItem(v)) {
+                localStorage.setItem(v, "");
+                return "";
+            }
+            return localStorage.getItem(v);
+        }
+
+        function post() {
+            var title = document.getElementById("myTitle").value;
+            var name = document.getElementById("NameSurname").value;
+            var text = document.getElementById("myText").value;
+            console.log(title);
+
+            var d = new Date();
+            var time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var months_v = months[d.getMonth()];
+            var days_v = days[d.getDay()];
+
+            if (name == "")
+                var komanda = '<div class="card"><h2>' + title + '</h2><h5><br>' + days_v + ', ' + d.getDate() + ' ' + months_v + ' ' + d.getFullYear() + ', ' + time + '</h5> <p class="blog-txt">' + text + '</p></div>'
+            else
+                var komanda = '<div class="card"><h2>' + title + '</h2><h5>By ' + name + ',<br>' + days_v + ', ' + d.getDate() + ' ' + months_v + ' ' + d.getFullYear() + ', ' + time + '</h5> <p class="blog-txt">' + text + '</p></div>'
+
+            //go pishuva tekstot vo html dokumentot
+            mom = getSavedValuePost("posted");
+            document.getElementById("posted").innerHTML = komanda + mom;
+
+            //go zachuvuva tekstot vo lokalnata memorija
+            mom = komanda + mom;
+            localStorage.setItem("posted", mom);
+        }
+    </script>
+</head>
+
+
+<!--Header-->
+
+<body>
+    <div class="nav-bar">
+        <nav id="header-blog">
+            <div id="logo">
+                <a>
+                    <img class="logo" src="images/BJ-1.1.svg" alt="logo" title="BJ" width="65px" height="45px">
+                </a>
+            </div>
+            <ul class="nav_links">
+                <li><a href="webpage.html#home">Home</a></li>
+                <li><a href="webpage.html#aboutme">About me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <div class="dropdown">
+                    <button class="dropbutton"><a href="#favorites">Favorites</a></button>
+                    <div class="dropdown-content">
+                        <a href="webpage.html#music">Music</a>
+                        <a href="webpage.html#movies">Movies</a>
+                        <a href="webpage.html#food">Food</a>
+                    </div>
+                </div>
+            </ul>
+            <div>
+                <a class="cta" href="webpage.html#contactAndFeedback"><button class="feedback-button">Contact & Feedback</button></a> </div>
+        </nav>
+    </div>
+
+
+    <!--Blog-->
+    <div class="card">
+        <h3>Write whatever you'd like, text, article, blog, etc...</h2>
+            <form>
+                <p>
+                    <input class="txt" type="text" id="myTitle" placeholder="Title">
+                    <input class="txt" type="text" id="NameSurname" placeholder="Name & Surname">
+                </p>
+
+                <textarea id="myText" placeholder="Write something"></textarea>
+            </form>
+            <p style="text-align: center;"><button class="post-btn" onclick="post()">Post</button></p>
+
+            </form>
+    </div>
+
+    <div id="posted">
+        <script>
+            document.getElementById("posted").innerHTML = getSavedValuePost("posted");
+        </script>
+    </div>
+
+    <div class="card">
+        <h2>Retooling auto plants for EVs will cost billions. Biden wants to help</h2>
+        <h5>By Joseph White and David Shepardson,<br>17 November 2021</h5>
+        <p class="blog-txt"> DETROIT, Nov 17 (Reuters) - General Motors Co's (GM.N) "Factory Zero" in Detroit is on the front line of a battle for the U.S. electric vehicle market between ageing, unionized factories, and new, non-union plants run by young electric vehicle
+            companies. President Joe Biden's administration wants to give the older part of the American auto industry a boost. Biden's scheduled visit Wednesday to Factory Zero will put a spotlight on his administration's proposals to bring billions
+            in federal aid to help older auto factories and the Midwestern communities that depend on them, as part of his "Build Back Better" spending bill. The Biden administration and fellow Democrats in Congress have proposed nearly $50 billion in
+            tax breaks, incentives for government agencies to buy electric vehicles, loans for retooling factories and aid to automotive plant communities. <br>
+            <a class="a-blog" href="https://www.reuters.com/business/autos-transportation/retooling-auto-plants-evs-will-cost-billions-biden-wants-help-2021-11-17/">Read more</a>
+        </p>
+    </div>
+    <div class="card">
+        <h2>Spencer review: Kristen Stewart dazzles in unconventional Princess Diana biopic</h2>
+        <h5>By Mary Sollosi,<br>4 November 2021</h5>
+        <p class="blog-txt">
+            In an enormous, pristine, mostly unadorned kitchen, a sign on the wall warns the assembled staff: "Keep noise to a minimum. They can hear you." The room is the kitchen at Sandringham House; the "they" is the British royal family, gathered at the English
+            country estate for Christmas in the early '90s. The sign appears early in Pablo Larraín's Spencer, in which it might be more to the point for it to read not that they can hear you, but that they're always listening. The film's versions of
+            Elizabeth II & Co. don't really hear anyone — however much a person cries out who they are or what they need — and least heard of all is Kristen Stewart's Princess Diana, from whose tortured perspective the defiantly eccentric biopic unravels.
+            A fictionalized account of a fraught holiday wherein Diana (née Spencer) decides to break with her high-profile husband, the film chronicles three days' worth of torment in the form of humiliating rituals, stiffly formal meals, and countless
+            pre-assigned wardrobe changes. Sandringham is huge, but Larraín renders it deeply claustrophobic (with an expert assist from Jonny Greenwood's unnerving score), with various diverse reminders that they can hear you should you deviate from
+            their script. As the walls of the country house seem to close in, the avenues for escape — or even just a little rebellion — become ever narrower; sometimes all she can do is wear the Boxing Day dress for Christmas breakfast, unless it was
+            the Christmas Eve dinner dress for Christmas church.<br>
+            <a class="a-blog" href="https://ew.com/movies/movie-reviews/spencer-review-kristen-stewart-princess-diana/">Read more</a>
+        </p>
+    </div>
+    <div class="card">
+        <h2>Neutron star collisions probably make more gold than other cosmic smashups</h2>
+        <h5>By Emily Conover,<br>3 November 2021</h5>
+        <p class="blog-txt">
+            The cosmic origins of elements heavier than iron are mysterious. One elemental birthplace came to light in 2017 when two neutron-rich dead stars collided and spewed out gold, platinum and other hefty elements (SN: 10/16/17). A few years later, a smashup
+            of another neutron star and a black hole left scientists wondering which type of cosmic clash was the more prolific element foundry (SN: 6/29/21). Now, they have an answer. Collisions of two neutron stars probably take the cake, scientists
+            report October 25 in Astrophysical Journal Letters. To create heavy elements after either type of collision, neutron star material must be flung into space, where a series of nuclear reactions called the r-process can transform the material
+            (SN: 4/22/16). How much material escapes into space, if any, depends on various factors. For example, in collisions of a neutron star and black hole, the black hole has to be relatively small, or “there’s no hope at all,” says astrophysicist
+            Hsin-Yu Chen of MIT. “It’s going to swallow the neutron star right away,” without ejecting anything. Questions remain about both types of collisions, spotted via the ripples in spacetime that they kick up. So Chen and colleagues considered
+            a range of possibilities for the properties of neutron stars and black holes, such as the distributions of their masses and how fast they spin. The team then calculated the mass ejected by each type of collision under those varied conditions.
+            In most scenarios, the neutron star–black hole mergers made a smaller quantity of heavy elements than the neutron star duos — in one case only about a hundredth the amount.<br>
+            <a class="a-blog" href=https://www.sciencenews.org/article/neutron-star-collision-gold-heavy-elements-cosmos>Read more</a>
+        </p>
+    </div>
+
+
+    <!--Footer-->
+    <footer id="footer-1">
+        <div class="copyright">
+            &copy; Copyright, designed by <b>Bobi Jordanov</b>. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
